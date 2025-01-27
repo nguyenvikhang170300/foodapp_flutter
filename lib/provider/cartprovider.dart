@@ -7,7 +7,6 @@ class CartProvider extends ChangeNotifier {
   List<CartItem> _items = [];
 
   void addItem(String idCart, Products product, String size, String color, int quantity) {
-    notifyListeners();
     _items.add(CartItem(
       idCart: idCart,
       products: product,
@@ -15,6 +14,7 @@ class CartProvider extends ChangeNotifier {
       quantity: quantity,
       color: color,
     ));
+     notifyListeners();
   }
 
   List<CartItem> get items => _items;
